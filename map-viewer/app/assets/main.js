@@ -12283,20 +12283,20 @@ __webpack_require__.r(__webpack_exports__);
 
 function get_each_context(ctx, list, i) {
 	const child_ctx = ctx.slice();
-	child_ctx[23] = list[i];
+	child_ctx[24] = list[i];
 	return child_ctx;
 }
 
-// (293:8) {#each files.filter((item) => item.name.indexOf(searchTerm) !== -1) as file}
+// (297:8) {#each files.filter((item) => item.name.indexOf(searchTerm) !== -1) as file}
 function create_each_block(ctx) {
 	let map;
 	let current;
 
 	function click_handler_4(...args) {
-		return /*click_handler_4*/ ctx[16](/*file*/ ctx[23], ...args);
+		return /*click_handler_4*/ ctx[17](/*file*/ ctx[24], ...args);
 	}
 
-	map = new _components_Map_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({ props: { file: /*file*/ ctx[23] } });
+	map = new _components_Map_svelte__WEBPACK_IMPORTED_MODULE_3__["default"]({ props: { file: /*file*/ ctx[24] } });
 	map.$on("click", click_handler_4);
 
 	return {
@@ -12310,7 +12310,7 @@ function create_each_block(ctx) {
 		p(new_ctx, dirty) {
 			ctx = new_ctx;
 			const map_changes = {};
-			if (dirty & /*files, searchTerm*/ 24) map_changes.file = /*file*/ ctx[23];
+			if (dirty & /*files, searchTerm*/ 48) map_changes.file = /*file*/ ctx[24];
 			map.$set(map_changes);
 		},
 		i(local) {
@@ -12334,23 +12334,26 @@ function create_fragment(ctx) {
 	let t0;
 	let t1;
 	let t2;
-	let input;
+	let small;
 	let t3;
-	let button0;
+	let t4;
+	let input;
 	let t5;
-	let button1;
+	let button0;
 	let t7;
-	let button2;
+	let button1;
 	let t9;
-	let button3;
+	let button2;
 	let t11;
+	let button3;
+	let t13;
 	let div0;
-	let t12;
+	let t14;
 	let information;
 	let current;
 	let mounted;
 	let dispose;
-	let each_value = /*files*/ ctx[3].filter(/*func*/ ctx[15]);
+	let each_value = /*files*/ ctx[4].filter(/*func*/ ctx[16]);
 	let each_blocks = [];
 
 	for (let i = 0; i < each_value.length; i += 1) {
@@ -12371,28 +12374,31 @@ function create_fragment(ctx) {
 			h1 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["element"])("h1");
 			t0 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["text"])("Hi ");
 			t1 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["text"])(/*Username*/ ctx[0]);
-			t2 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["text"])("\n    Filter:\n    ");
+			t2 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
+			small = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["element"])("small");
+			t3 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["text"])(/*basepath*/ ctx[3]);
+			t4 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["text"])("\n    Filter:\n    ");
 			input = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["element"])("input");
-			t3 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
-			button0 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["element"])("button");
-			button0.textContent = "Select 📄";
 			t5 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
+			button0 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["element"])("button");
+			button0.textContent = "Select Basepath 📄";
+			t7 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
 			button1 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["element"])("button");
 			button1.textContent = "Read All 📄";
-			t7 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
+			t9 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
 			button2 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["element"])("button");
 			button2.textContent = "Save All 📄";
-			t9 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
+			t11 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
 			button3 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["element"])("button");
 			button3.textContent = "Load All 📄";
-			t11 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
+			t13 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
 			div0 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["element"])("div");
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].c();
 			}
 
-			t12 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
+			t14 = Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["space"])();
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["create_component"])(information.$$.fragment);
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["attr"])(h1, "class", "svelte-1ymxvy");
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["attr"])(div0, "class", "container svelte-1ymxvy");
@@ -12404,35 +12410,38 @@ function create_fragment(ctx) {
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, h1);
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(h1, t0);
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(h1, t1);
-			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, t2);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(h1, t2);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(h1, small);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(small, t3);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, t4);
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, input);
-			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["set_input_value"])(input, /*searchTerm*/ ctx[4]);
-			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, t3);
-			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, button0);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["set_input_value"])(input, /*searchTerm*/ ctx[5]);
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, t5);
-			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, button1);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, button0);
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, t7);
-			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, button2);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, button1);
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, t9);
-			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, button3);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, button2);
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, t11);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, button3);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, t13);
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, div0);
 
 			for (let i = 0; i < each_blocks.length; i += 1) {
 				each_blocks[i].m(div0, null);
 			}
 
-			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, t12);
+			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["append"])(div1, t14);
 			Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["mount_component"])(information, div1, null);
 			current = true;
 
 			if (!mounted) {
 				dispose = [
-					Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["listen"])(input, "input", /*input_input_handler*/ ctx[10]),
-					Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["listen"])(button0, "click", /*click_handler*/ ctx[11]),
-					Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["listen"])(button1, "click", /*click_handler_1*/ ctx[12]),
-					Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["listen"])(button2, "click", /*click_handler_2*/ ctx[13]),
-					Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["listen"])(button3, "click", /*click_handler_3*/ ctx[14])
+					Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["listen"])(input, "input", /*input_input_handler*/ ctx[11]),
+					Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["listen"])(button0, "click", /*click_handler*/ ctx[12]),
+					Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["listen"])(button1, "click", /*click_handler_1*/ ctx[13]),
+					Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["listen"])(button2, "click", /*click_handler_2*/ ctx[14]),
+					Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["listen"])(button3, "click", /*click_handler_3*/ ctx[15])
 				];
 
 				mounted = true;
@@ -12440,13 +12449,14 @@ function create_fragment(ctx) {
 		},
 		p(ctx, [dirty]) {
 			if (!current || dirty & /*Username*/ 1) Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["set_data"])(t1, /*Username*/ ctx[0]);
+			if (!current || dirty & /*basepath*/ 8) Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["set_data"])(t3, /*basepath*/ ctx[3]);
 
-			if (dirty & /*searchTerm*/ 16 && input.value !== /*searchTerm*/ ctx[4]) {
-				Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["set_input_value"])(input, /*searchTerm*/ ctx[4]);
+			if (dirty & /*searchTerm*/ 32 && input.value !== /*searchTerm*/ ctx[5]) {
+				Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["set_input_value"])(input, /*searchTerm*/ ctx[5]);
 			}
 
-			if (dirty & /*files, searchTerm, readFile*/ 28) {
-				each_value = /*files*/ ctx[3].filter(/*func*/ ctx[15]);
+			if (dirty & /*files, searchTerm, readFile*/ 52) {
+				each_value = /*files*/ ctx[4].filter(/*func*/ ctx[16]);
 				let i;
 
 				for (i = 0; i < each_value.length; i += 1) {
@@ -12537,6 +12547,7 @@ function instance($$self, $$props, $$invalidate) {
 	let { Neutralino } = $$props;
 	let { Username = "" } = $$props;
 	let { versionInfo = { NL_VERSION, NL_PORT, NL_OS, NL_NAME } } = $$props;
+	let basepath = "C:\\Games\\Call of Duty\\uo";
 	var key = NL_OS == "Windows" ? "USERNAME" : "USER";
 
 	Neutralino.os.getEnvar(key, function (data) {
@@ -12558,7 +12569,7 @@ function instance($$self, $$props, $$invalidate) {
 	Neutralino.filesystem.readDirectory(
 		"C:\\Games\\Call of Duty\\uo",
 		function (data) {
-			$$invalidate(3, files = data.files.filter(file => file.type === "file" && file.name.match(/.pk3/) && !file.name.match(/pakuo|.tmp/)));
+			$$invalidate(4, files = data.files.filter(file => file.type === "file" && file.name.match(/.pk3/) && !file.name.match(/pakuo|.tmp/)));
 			console.log(files);
 		},
 		function () {
@@ -12578,7 +12589,10 @@ function instance($$self, $$props, $$invalidate) {
 			"Open a file..",
 			function (data) {
 				console.log(data);
-				filePath = data.file;
+				filePath = data.file.split("\\");
+				filePath.pop();
+				$$invalidate(3, basepath = filePath.join("\\"));
+				console.log(basepath);
 			},
 			function () {
 				console.error("error");
@@ -12636,9 +12650,9 @@ function instance($$self, $$props, $$invalidate) {
 		layoutcanvas.setAttribute("height", height);
 		layoutcanvas.setAttribute("width", width);
 
-		Neutralino.os.runCommand(`convert.bat ${filename} layouts/${layoutname}`, async data => {
+		Neutralino.os.runCommand(`convert.bat ${filename} layouts/${layoutname} "${basepath}"`, async data => {
 			if (data.stdout && data.stdout != "\n") {
-				$$invalidate(3, files[index].layout = await reduceImageSize("data:image/jpg;base64," + data.stdout, layoutcanvas), files);
+				$$invalidate(4, files[index].layout = await reduceImageSize("data:image/jpg;base64," + data.stdout, layoutcanvas), files);
 				console.log("found hud@layout", layoutname);
 			}
 		});
@@ -12646,7 +12660,7 @@ function instance($$self, $$props, $$invalidate) {
 
 	async function readFile(filename, index) {
 		return new Promise(resolve => {
-				Neutralino.os.runCommand(`7z l "C:\\Games\\Call of Duty\\uo\\${filename}.pk3" levelshots/`, data => {
+				Neutralino.os.runCommand(`7z l "${basepath}\\${filename}.pk3" levelshots/`, data => {
 					const canvas = document.createElement("canvas");
 					canvas.setAttribute("height", height);
 					canvas.setAttribute("width", width);
@@ -12655,22 +12669,22 @@ function instance($$self, $$props, $$invalidate) {
 					? getMapName(data.stdout)
 					: filename;
 
-					$$invalidate(3, files[index].mapname = mapname, files);
+					$$invalidate(4, files[index].mapname = mapname, files);
 					const layout = getMapName(data.stdout, true);
 
 					if (data.stdout.includes(".jpg")) {
-						Neutralino.os.runCommand(`7z x "C:\\Games\\Call of Duty\\uo\\${filename}.pk3" levelshots/${mapname}.jpg -so | "C:\\Program Files\\OpenSSL-Win64\\bin\\openssl" base64 2>&1`, async data => {
+						Neutralino.os.runCommand(`7z x "${basepath}\\${filename}.pk3" levelshots/${mapname}.jpg -so | openssl base64 2>&1`, async data => {
 							if (data.stdout && data.stdout != "\n") {
-								$$invalidate(3, files[index].image = await reduceImageSize("data:image/jpg;base64," + data.stdout, canvas), files);
+								$$invalidate(4, files[index].image = await reduceImageSize("data:image/jpg;base64," + data.stdout, canvas), files);
 								console.log("found jpg", mapname);
 								if (layout) addLayout(filename, layout, index);
 								resolve(files[index].image);
 							}
 						});
 					} else if (data.stdout.includes(".dds")) {
-						Neutralino.os.runCommand(`convert.bat ${filename} ${mapname}`, async data => {
+						Neutralino.os.runCommand(`convert.bat ${filename} ${mapname} "${basepath}"`, async data => {
 							if (data.stdout && data.stdout != "\n") {
-								$$invalidate(3, files[index].image = await reduceImageSize("data:image/jpg;base64," + data.stdout, canvas), files);
+								$$invalidate(4, files[index].image = await reduceImageSize("data:image/jpg;base64," + data.stdout, canvas), files);
 								console.log("found dds", mapname);
 								if (layout) addLayout(filename, layout, index);
 								resolve(files[index].image);
@@ -12680,7 +12694,7 @@ function instance($$self, $$props, $$invalidate) {
 						console.log("Did not find an levelshot for", filename);
 
 						$$invalidate(
-							3,
+							4,
 							files[index].image = "data:image/png;base64," + `iVBORw0KGgoAAAANSUhEUgAAAAUA
 AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
 9TXL0Y4OHwAAAABJRU5ErkJggg==`,
@@ -12704,10 +12718,13 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
 
 	function saveAll() {
 		Neutralino.storage.putData(
-			{ bucket: "files", content: { files } },
+			{
+				bucket: "files",
+				content: { files, basepath }
+			},
 			// executes on successful storage of data
 			function () {
-				console.log("Data saved to storage/test.json");
+				console.log("Data saved to storage/files.json");
 			},
 			// executes if an error occurs
 			function () {
@@ -12721,12 +12738,12 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
 			"files",
 			// executes when data is successfully retrieved.
 			function (content) {
-				console.log("The data you requested for \n");
+				console.log("Restored saved data \n");
 
 				// the data that has been retrieved.
-				console.log(content);
+				$$invalidate(4, files = content.files.filter(file => !file.name.match(/pakuo|.tmp/)));
 
-				$$invalidate(3, files = content.files.filter(file => !file.name.match(/pakuo|.tmp/)));
+				if (conent.basepath) $$invalidate(3, basepath = content.basepath);
 			},
 			// executes if an error occurs
 			function () {
@@ -12740,7 +12757,7 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
 
 	function input_input_handler() {
 		searchTerm = this.value;
-		$$invalidate(4, searchTerm);
+		$$invalidate(5, searchTerm);
 	}
 
 	const click_handler = () => openFile();
@@ -12751,7 +12768,7 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
 	const click_handler_4 = file => readFile(file.name.replace(/\.\w*/, ""), files.indexOf(file));
 
 	$$self.$set = $$props => {
-		if ("Neutralino" in $$props) $$invalidate(9, Neutralino = $$props.Neutralino);
+		if ("Neutralino" in $$props) $$invalidate(10, Neutralino = $$props.Neutralino);
 		if ("Username" in $$props) $$invalidate(0, Username = $$props.Username);
 		if ("versionInfo" in $$props) $$invalidate(1, versionInfo = $$props.versionInfo);
 	};
@@ -12760,6 +12777,7 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
 		Username,
 		versionInfo,
 		readFile,
+		basepath,
 		files,
 		searchTerm,
 		openFile,
@@ -12782,7 +12800,7 @@ class App extends svelte_internal__WEBPACK_IMPORTED_MODULE_0__["SvelteComponent"
 		super();
 
 		Object(svelte_internal__WEBPACK_IMPORTED_MODULE_0__["init"])(this, options, instance, create_fragment, svelte_internal__WEBPACK_IMPORTED_MODULE_0__["safe_not_equal"], {
-			Neutralino: 9,
+			Neutralino: 10,
 			Username: 0,
 			versionInfo: 1,
 			readFile: 2

@@ -10,7 +10,7 @@
         NL_OS,
         NL_NAME,
     };
-
+    let basepath = "C:\\Games\\Call of Duty\\uo";
     var key = NL_OS == "Windows" ? "USERNAME" : "USER";
     Neutralino.os.getEnvar(key, function (data) {
         Username = data.value;
@@ -56,7 +56,10 @@
             "Open a file..",
             function (data) {
                 console.log(data);
-                filePath = data.file;
+                filePath = data.file.split("\\");
+                filePath.pop();
+                basepath = filePath.join("\\");
+                console.log(basepath);
             },
             function () {
                 console.error("error");
@@ -138,7 +141,7 @@
         layoutcanvas.setAttribute("height", height);
         layoutcanvas.setAttribute("width", width);
         Neutralino.os.runCommand(
-            `convert.bat ${filename} layouts/${layoutname}`,
+            `convert.bat ${filename} layouts/${layoutname} "${basepath}"`,
             async (data) => {
                 if (data.stdout && data.stdout != "\n") {
                     files[index].layout = await reduceImageSize(
@@ -154,7 +157,7 @@
     export async function readFile(filename, index) {
         return new Promise((resolve) => {
             Neutralino.os.runCommand(
-                `7z l "C:\\Games\\Call of Duty\\uo\\${filename}.pk3" levelshots/`,
+                `7z l "${basepath}\\${filename}.pk3" levelshots/`,
                 (data) => {
                     const canvas = document.createElement("canvas");
                     canvas.setAttribute("height", height);
@@ -167,7 +170,7 @@
                     const layout = getMapName(data.stdout, true);
                     if (data.stdout.includes(".jpg")) {
                         Neutralino.os.runCommand(
-                            `7z x "C:\\Games\\Call of Duty\\uo\\${filename}.pk3" levelshots/${mapname}.jpg -so | "C:\\Program Files\\OpenSSL-Win64\\bin\\openssl" base64 2>&1`,
+                            `7z x "${basepath}\\${filename}.pk3" levelshots/${mapname}.jpg -so | openssl base64 2>&1`,
                             async (data) => {
                                 if (data.stdout && data.stdout != "\n") {
                                     files[index].image = await reduceImageSize(
@@ -183,7 +186,7 @@
                         );
                     } else if (data.stdout.includes(".dds")) {
                         Neutralino.os.runCommand(
-                            `convert.bat ${filename} ${mapname}`,
+                            `convert.bat ${filename} ${mapname} "${basepath}"`,
                             async (data) => {
                                 if (data.stdout && data.stdout != "\n") {
                                     files[index].image = await reduceImageSize(
@@ -226,12 +229,13 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
                 bucket: "files",
                 content: {
                     files: files,
+                    basepath: basepath,
                 },
             },
 
             // executes on successful storage of data
             function () {
-                console.log("Data saved to storage/test.json");
+                console.log("Data saved to storage/files.json");
             },
             // executes if an error occurs
 
@@ -245,13 +249,13 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
             "files",
             // executes when data is successfully retrieved.
             function (content) {
-                console.log("The data you requested for \n");
+                console.log("Restored saved data \n");
 
                 // the data that has been retrieved.
-                console.log(content);
                 files = content.files.filter(
                     (file) => !file.name.match(/pakuo|.tmp/)
                 );
+                if (conent.basepath) basepath = content.basepath;
             },
             // executes if an error occurs
             function () {
@@ -282,10 +286,10 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
 </style>
 
 <div id="neutralinoapp">
-    <h1>Hi {Username}</h1>
+    <h1>Hi {Username} <small>{basepath}</small></h1>
     Filter:
     <input bind:value={searchTerm} />
-    <button on:click={() => openFile()}>Select 📄</button>
+    <button on:click={() => openFile()}>Select Basepath 📄</button>
     <button on:click={() => readFiles()}>Read All 📄</button>
     <button on:click={() => saveAll()}>Save All 📄</button>
     <button on:click={() => loadData()}>Load All 📄</button>
