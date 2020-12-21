@@ -1,0 +1,35 @@
+{
+  "name": "uotools-map-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "repository": "https://github.com/malipetek/neutralinojs-svelte.git",
+  "scripts": {
+    "build": "webpack -p --config webpack.config.js",
+    "dev:webpack": "webpack --watch & webpack-dev-server --colors",
+    "dev": "npm run dev:webpack && watch \"./map-viewer-win.exe\" src",
+    "start": "webpack --watch & webpack-dev-server --colors | ./map-viewer-win.exe",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lalilaloe",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.4.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "style-loader": "^0.23.1",
+    "svelte": "^3.0.0",
+    "svelte-loader": "2.13.3",
+    "watch": "^1.0.2",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "node-stream-zip": "^1.12.0"
+  }
+}

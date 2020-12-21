@@ -1,0 +1,16 @@
+{
+  "appname": "map-viewer",
+  "appport": "9999",
+  "url": "/",
+  "mode": "browser",
+  "window": {
+    "title": "My app",
+    "width": "1000",
+    "height": "700",
+    "fullscreen": false,
+    "alwaysontop": false,
+    "iconfile": "neutralino.png",
+    "enableinspector": false,
+    "borderlesswindow": true
+  }
+}
